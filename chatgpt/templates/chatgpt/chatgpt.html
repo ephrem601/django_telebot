@@ -1,0 +1,46 @@
+<h1>Hello this is Chat-GPT</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT</title>
+    <style>
+        /* Add your CSS styles here */
+        /* For demonstration purposes, a simple chat UI is provided */
+        .chat-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .user-message {
+            color: blue;
+        }
+        .bot-message {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>ChatGPT</h2>
+        <div id="chat-display">
+            {% for message in chat_history %}
+                <div class="message user-message">{{ message.user_message }}</div>
+                <div class="message bot-message">{{ message.bot_response }}</div>
+            {% endfor %}
+        </div>
+        <form id="chat-form" action="{% url 'chatgpt:chat_view' %}" method="post">
+            {% csrf_token %}
+            <input type="text" id="user-input" name="message" placeholder="Type your message here" autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
