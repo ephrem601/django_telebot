@@ -12,7 +12,7 @@ import json
 openai.api_key = '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'
 bot_token = '7143168124:AAFPnICo10xJJPQ6NrvmuY1T-AVCaiEr4DI'
 bot = Bot(token=bot_token)
-webhook_url = 'https://rmnnq5twun.loclx.io/chatgpt/webhook/'
+webhook_url = 'https://vyezfh1tpt.loclx.io/chatgpt/webhook/'
 bot.setWebhook(webhook_url)
  
 
@@ -40,14 +40,11 @@ def handle_message(request):
         response = openai.Completion.create(
             model="gpt-3.5-turbo-instruct",  # Choose a different model, e.g., text-davinci-002
             prompt = text,
-            max_tokens=50  # Adjust as needed
+            max_tokens=200  # Adjust as needed
         )
         res_gpt = response.choices[0].text.strip()
-        lines = res_gpt.split('\n')
-        limited_lines = lines[:10]
-        limited_text = '\n'.join(limited_lines)
-        bot.send_message(chat_id=chat_id, text= limited_text)
-        return limited_text
+        bot.send_message(chat_id=chat_id, text= res_gpt)
+        return res_gpt
         
 #Development Server
 def start_up(update):
@@ -58,10 +55,10 @@ def start_up(update):
          This telegram bot is integrated with a ChatGPT transformer archtecture. ChatGPT is an advanced language model developed by OpenAI. Please note that the usage of this telegram bot is strictly intended for educational purposes. It can provide valuable assistance, guidance, and information. OpenAI encourages responsible and ethical use of ChatGPT to enhance learning experiences and support educational endeavors.
           
          
-        © ephremnigussie7gmail.com
-        url: @BSchool_ChatGPT_BOT
+        © ephremnigussie7@gmail.com
+link: https://t.me/BSchool_ChatGPT_BOT
          
-       🌐 Learn more on openai.com
+       🌐 Learn more on https://openai.com
        📚 Ask about anything you want
         '''
          
