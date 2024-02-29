@@ -9,8 +9,8 @@ import json
  
 
 # Replace 'YOUR_API_KEY' with your actual OpenAI API key
-openai.api_key = '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'
-bot_token = '7143168124:AAFPnICo10xJJPQ6NrvmuY1T-AVCaiEr4DI'
+openai.api_key = ''
+bot_token =''
 bot = Bot(token=bot_token)
 webhook_url = 'https://vyezfh1tpt.loclx.io/chatgpt/webhook/'
 bot.setWebhook(webhook_url)
